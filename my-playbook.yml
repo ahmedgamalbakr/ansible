@@ -1,0 +1,5 @@
+- name: server configuration 
+  hosts: web_server
+  gather_facts: false
+  roles:
+    - web

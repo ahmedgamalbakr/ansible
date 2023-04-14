@@ -1,0 +1,12 @@
+- name: copy_template_usingHandler
+  template:
+    src: dynamicfile.j2
+    dest:  /usr/share/nginx/html/index.html
+  notify: start_nginx
+
+
+- name: start_nginx
+  systemd:
+    name: "{{ package_name }}"
+    state: started
+
